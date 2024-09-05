@@ -12,6 +12,7 @@ export class BookingComponent {
   isConfirmed = false; 
 
   confirmBooking(): void {
+    console.log('confirming booking...');
     this.isConfirmed = true; 
   }
 }

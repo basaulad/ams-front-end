@@ -33,7 +33,6 @@ export class LoginComponent implements OnInit{
 }
 
 login(): void{
-  //alert('Login clicked');
   const user = this.loginForm.value;
   this.userService.login(user).subscribe((user: User) => {
     if(user.email) {

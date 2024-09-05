@@ -20,6 +20,7 @@ export class ListingsService {
  
 
   getListings(): Observable<Listings[]>{
+    console.log('getting list...');
     return this.http.get<Listings[]>(this.api, this.httpOptions);
   }
 }

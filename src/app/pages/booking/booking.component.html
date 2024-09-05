@@ -1,0 +1,31 @@
+<div style="text-align: center; font-size: 50px; color: maroon;">
+    <p>Thank you for choosing AirBnB!</p>
+</div>
+<br>
+<br>
+
+<div style="text-align: center;">
+    <p>Billing Information </p>
+</div>
+
+<DIV>
+    <label>Credit/Debit card number</label>
+    <input class="form-control" type="text" placeholder="Enter crdit/debit card number">
+    <br><br>
+
+    <label>Name on Card</label>
+    <input class="form-control" type="text" placeholder="Enter name on card">
+    <br><br>
+
+    <label>Zipcode</label>
+    <input type="number" placeholder="00000">
+</DIV>
+<br>
+
+<div style="text-align: center;">
+    <button class="btn btn-warning" (click)="confirmBooking()">Confirm booking?</button>
+    <p *ngIf="isConfirmed" style="color: blue; font-size: 50px;">Your booking is successful!!</p>
+</div>
+
+
+

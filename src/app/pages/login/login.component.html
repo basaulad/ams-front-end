@@ -1,0 +1,25 @@
+<div class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <h2> Hello, Welcome to AirBnB!</h2><br>
+
+        <label>Email</label>
+        <input class="form-control" type="text" id="email" formControlName="email" placeholder="Email">
+        <br><br>
+
+        <label>Password</label>
+        <input class="form-control" type="password" id="password" formControlName="password" placeholder="Password">
+        <br><br>
+   
+        <button class="btn btn-success" type="submit">Login</button>
+        <br>
+        <br>
+        <button class="btn btn-primary"  routerLink="/signup">Not Registered? Click to Sign Up!</button>
+    
+    
+    </form>
+
+    
+    
+   
+
+</div>

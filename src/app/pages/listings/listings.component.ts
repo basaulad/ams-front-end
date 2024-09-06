@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Listings } from '../../models/listings';
 import { ListingsService } from '../../services/listings.service';
+import { types } from 'util';
 
 @Component({
   selector: 'app-listings',
@@ -21,6 +22,8 @@ export class ListingsComponent implements OnInit {
   filteredList: Listings[] = [];
   rentalTypes: string[] = [];
   rentalTypeControl = new FormControl('');
+  cityTypes: string[] = [];
+  cityControl = new FormControl('');
 
   constructor(private listingsService: ListingsService) {}
 
@@ -33,12 +36,18 @@ export class ListingsComponent implements OnInit {
       this.listingsList = listingsList;
       this.filteredList = [...this.listingsList];
       this.extractRentalTypes();
+      this.extractCityTypes();
     });
   }
 
   extractRentalTypes(): void {
     const types = new Set(this.listingsList.map(listing => listing.title));
     this.rentalTypes = Array.from(types);
+  }
+
+  extractCityTypes(): void {
+    const types = new Set(this.listingsList.map(listing => listing.city));
+    this.cityTypes = Array.from(types);
   }
 
   onFilterChange(): void {
@@ -49,4 +58,13 @@ export class ListingsComponent implements OnInit {
       this.filteredList = [...this.listingsList];
     }
   }
-}
+
+  onCityFilterChange(): void {
+    const selectedType = this.cityControl.value;
+    if(selectedType) {
+      this.filteredList = this.listingsList.filter(listing => listing.city === selectedType);
+    }else{
+      this.filteredList = [...this.listingsList];
+    }
+    }
+  }

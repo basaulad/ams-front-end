@@ -11,24 +11,24 @@
         <img [src]="imageUrl" alt="External Image" style="width: 200px; height: auto;"/> <br><br>
       </div>
       <br><br>
+      <label style="font-size: 25px; color: brown;">Search Here:</label>
       <div>
         <label>Rental Type</label>
-        <select [formControl]="rentalTypeControl" (change)="onFilterChange()">
+        <select [formControl]="rentalTypeControl" (change)="onFilterChange()" class="rounded">
           <option value="">Select Rental Type</option>
           <option *ngFor="let type of rentalTypes" [value]="type">{{ type }}</option>
         </select>
       </div>
       <br>
-  
-      <label>Search By</label>
-      <input class="form-control" placeholder="Address"><br>
-  
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <div>
+        <label>City</label>
+        <select [formControl]="cityControl" (change)="onCityFilterChange()" class="rounded">
+          <option value="">Select City</option>
+          <option *ngFor="let type of cityTypes" [value]="type">{{ type }}</option>
+        </select>
+      </div>
+      <br>
     </form>
-  </div>
-  
-  <div id="selectedRentalType" style="text-align: center; font-size: 24px; color: green; font-weight: 500; margin-top: 20px;">
-    Selected Rental Type: {{ rentalTypeControl.value || 'None' }}
   </div>
   
   <div class="table-responsive m-3">

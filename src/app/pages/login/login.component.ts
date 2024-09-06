@@ -38,7 +38,7 @@ login(): void{
     if(user.email) {
       this.router.navigate(['listings']);
     }else{
-      alert('Invalid email or password');
+      alert('Invalid email or password, sorry!!');
     }
   })
 }

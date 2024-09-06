@@ -34,10 +34,12 @@ export class ListingsComponent implements OnInit {
   getListings(): void {
     this.listingsService.getListings().subscribe((listingsList: Listings[]) => {
       console.log
+      alert('This is a test alert');
       this.listingsList = listingsList;
       this.filteredList = [...this.listingsList];
       this.extractRentalTypes();
       this.extractCityTypes();
+      console.log('no merge conflict');
     });
   }
 

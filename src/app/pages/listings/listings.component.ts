@@ -33,6 +33,7 @@ export class ListingsComponent implements OnInit {
 
   getListings(): void {
     this.listingsService.getListings().subscribe((listingsList: Listings[]) => {
+      console.log
       this.listingsList = listingsList;
       this.filteredList = [...this.listingsList];
       this.extractRentalTypes();

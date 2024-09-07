@@ -19,6 +19,7 @@ export class SignupComponent implements OnInit{
     private router: Router){}
 
     ngOnInit(): void {
+      console.log('component initialized');
       this.signupForm = this.formBuilder.group({
         fullname: [''],
         email: [''],
@@ -32,7 +33,7 @@ export class SignupComponent implements OnInit{
         if(result === 'success') {
           this.router.navigate(['login']);
         }else{
-          alert('Unable to register user!')
+          alert('Unable to register user!, please try again')
         }
       })
     }

@@ -28,6 +28,7 @@ export class ListingsComponent implements OnInit {
   constructor(private listingsService: ListingsService) {}
 
   ngOnInit(): void {
+    console.log('getting listings....');
     this.getListings();
   }
 

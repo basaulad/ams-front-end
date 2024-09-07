@@ -13,6 +13,7 @@ export class BookingComponent {
 
   confirmBooking(): void {
     console.log('confirming booking...');
+    console.log('creating booking report');
     this.isConfirmed = true; 
   }
 }

@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit{
 }
 
 login(): void{
+  console.log('logging in');
   const user = this.loginForm.value;
   this.userService.login(user).subscribe((user: User) => {
     if(user.email) {

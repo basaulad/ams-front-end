@@ -44,6 +44,7 @@ export class ListingsComponent implements OnInit {
   }
 
   extractRentalTypes(): void {
+    console.log('creating report');
     const types = new Set(this.listingsList.map(listing => listing.title));
     this.rentalTypes = Array.from(types);
   }
